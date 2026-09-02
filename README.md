@@ -8,4 +8,4 @@ Valider la chaîne complète : objectif → mission → code → PR → CI → m
 
 ## Badge eval
 
-![eval](https://img.shields.io/badge/eval-pending-orange)
+![eval](https://img.shields.io/badge/eval-passing-brightgreen)
