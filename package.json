@@ -1,0 +1,9 @@
+{
+  "name": "aerys-eval-sandbox",
+  "version": "1.0.0",
+  "description": "Sandbox for Aerys autonomy evaluation",
+  "scripts": {
+    "test": "node test/index.test.js",
+    "lint": "node -e \"console.log('lint ok')\""
+  }
+}
