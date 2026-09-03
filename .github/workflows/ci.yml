@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [main]
 
+# GITHUB_TOKEN minimal pour checkout + lecture Actions (badge CI).
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -14,5 +19,12 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: '24'
+      - name: Validate optional Aerys/Cursor secrets format
+        env:
+          # Optional — absent secrets are skipped. See README § Configuration secrets.
+          CURSOR_REPO_MAP: ${{ secrets.CURSOR_REPO_MAP }}
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          AERYS_CONNECTOR_CONFIG: ${{ secrets.AERYS_CONNECTOR_CONFIG }}
+        run: node scripts/validate-secrets.js
       - run: npm test
       - run: npm run lint

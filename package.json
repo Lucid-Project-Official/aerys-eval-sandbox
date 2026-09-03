@@ -4,6 +4,7 @@
   "description": "Sandbox for Aerys autonomy evaluation",
   "scripts": {
     "test": "node test/index.test.js",
-    "lint": "node -e \"console.log('lint ok')\""
+    "lint": "node -e \"console.log('lint ok')\"",
+    "validate-secrets": "node scripts/validate-secrets.js"
   }
 }
