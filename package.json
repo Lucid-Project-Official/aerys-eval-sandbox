@@ -5,6 +5,7 @@
   "scripts": {
     "test": "node test/index.test.js",
     "lint": "node -e \"console.log('lint ok')\"",
-    "validate-secrets": "node scripts/validate-secrets.js"
+    "validate-secrets": "node scripts/validate-secrets.js",
+    "verify-milan": "node scripts/verify-milan-setup.js"
   }
 }
