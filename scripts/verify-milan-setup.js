@@ -53,9 +53,10 @@ function validateCursorApiKey(raw) {
   if (trimmed.includes(';')) {
     fail('CURSOR_API_KEY must be a raw token, not a compound KEY=VALUE secret.');
   }
-  if (/^[^=]+=[^=]+$/.test(trimmed) && !trimmed.startsWith('cursor_')) {
-    warn(
-      'CURSOR_API_KEY resembles KEY=VALUE format. Store the raw Cursor API key only.',
+  if (/^[^=]+=[^=]+$/.test(trimmed)) {
+    fail(
+      'CURSOR_API_KEY must be a raw token, not KEY=VALUE format. ' +
+        'Compound secrets cause dict(str) → E005 on Aerys VPS.',
     );
   }
   return true;

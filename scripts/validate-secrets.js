@@ -70,9 +70,10 @@ function validateRawToken(name, value) {
       `${name} looks like a compound KEY=VALUE secret. Store the raw API key only.`,
     );
   }
-  if (/^[^=]+=[^=]+$/.test(trimmed) && !trimmed.startsWith('cursor_')) {
-    warn(
-      `${name} resembles KEY=VALUE format. Milan expects a raw Cursor API key, not "KEY=value".`,
+  if (/^[^=]+=[^=]+$/.test(trimmed)) {
+    fail(
+      `${name} must be a raw API key, not KEY=VALUE format ("${trimmed.slice(0, trimmed.indexOf('='))}=…"). ` +
+        'Storing KEY=VALUE causes dict(str) → E005 on Aerys VPS.',
     );
   }
 }
