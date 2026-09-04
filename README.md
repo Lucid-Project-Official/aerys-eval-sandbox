@@ -66,11 +66,15 @@ permissions:
 
 Cela suffit pour checkout, tests et badge CI. Milan n'a pas besoin de `secrets: write` sur ce dépôt pour la chaîne eval standard.
 
-### Vérification Milan (2026-09-04)
+### Vérification CI / déploiement (2026-09-04)
 
 | Contrôle | Résultat |
 |----------|----------|
-| CI `main` | **SUCCESS** — [run #33820423238](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/actions/runs/33820423238) |
+| CI `main` | **SUCCESS** — [run #33828000108](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/actions/runs/33828000108) |
+| Taux de réussite `main` | **100 %** sur les 9 derniers runs (1 échec historique initial avant ajout des tests) |
+| Tests unitaires | `npm test` — 4 suites (index, validate-secrets, verify-milan, verify-ci-workflow) |
+| Linting | `npm run lint` — OK |
+| Gate déploiement | `verify-ci-workflow.js` — structure workflow validée (pas de déploiement prod sur ce sandbox) |
 | Secrets GitHub Actions | Aucun requis ; validation optionnelle skip si absent ; rejet KEY=VALUE sur `CURSOR_API_KEY` |
 | App GitHub Cursor | Installée sur `aerys-eval-sandbox` (accès repo confirmé) |
 | Accès API secrets (`gh secret list`) | 403 attendu — token Cursor sans scope `secrets` (normal pour Milan) |
@@ -80,6 +84,9 @@ Cela suffit pour checkout, tests et badge CI. Milan n'a pas besoin de `secrets: 
 Commandes locales :
 
 ```bash
+npm test                   # tests unitaires complets (CI)
+npm run lint               # linting
+npm run verify-ci          # validation structure workflow (gate déploiement)
 npm run validate-secrets   # formats secrets GitHub Actions optionnels
 npm run verify-milan       # checklist connecteurs Milan + reachability GitHub
 ```
