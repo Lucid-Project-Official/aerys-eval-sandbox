@@ -39,6 +39,15 @@ const validRepoMap =
   );
 }
 
+// E005: KEY=VALUE format instead of raw token for CURSOR_API_KEY.
+{
+  const result = runVerifyMilan({
+    CURSOR_API_KEY: 'CURSOR_API_KEY=cursor_test_key_123',
+  });
+  assert.notStrictEqual(result.status, 0);
+  assert.match(result.stderr + result.stdout, /must be a raw token, not KEY=VALUE format/);
+}
+
 // Valid VPS configuration accepted.
 {
   const result = runVerifyMilan({

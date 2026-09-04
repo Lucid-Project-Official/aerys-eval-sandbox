@@ -51,6 +51,19 @@ const validRepoMap =
   );
 }
 
+// E005: KEY=VALUE format instead of raw token for CURSOR_API_KEY.
+{
+  const result = runValidateSecrets({
+    CURSOR_API_KEY: 'CURSOR_API_KEY=cursor_test_key_123',
+  });
+  assert.notStrictEqual(result.status, 0);
+  assert.match(result.stderr + result.stdout, /must be a raw API key, not KEY=VALUE format/);
+  assert.match(
+    result.stderr + result.stdout,
+    /dictionary update sequence element #0 has length 1; 2 is required|E005/,
+  );
+}
+
 // Valid formats accepted.
 {
   const result = runValidateSecrets({

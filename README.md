@@ -33,7 +33,7 @@ Cette erreur Python survient lorsqu'une valeur destinée à être un **objet JSO
 | Mauvaise configuration | Symptôme | Correction |
 |------------------------|----------|------------|
 | `CURSOR_REPO_MAP` = URL brute ou liste | `dict(str)` / `dict.update(list)` crash | Stocker un JSON objet valide |
-| `CURSOR_API_KEY` = `KEY=sk-...` | Parsing KEY=VALUE échoue sur jeton seul | Stocker le jeton brut uniquement |
+| `CURSOR_API_KEY` = `KEY=sk-...` | `dict(str)` / parsing KEY=VALUE échoue | Stocker le jeton brut uniquement (CI échoue si format KEY=VALUE) |
 | Config composée sans `=` | Segment de longueur 1 au lieu de 2 | Chaque segment doit être `CLE=valeur` |
 
 Correctif côté Aerys (AgentLab) : `safe_dict()` / `coerce_tool_args()` dans `backend/app/dialogue/tool_args.py` (bug E005, recette 2026-09-02).
@@ -70,8 +70,8 @@ Cela suffit pour checkout, tests et badge CI. Milan n'a pas besoin de `secrets: 
 
 | Contrôle | Résultat |
 |----------|----------|
-| CI `main` | **SUCCESS** — [run #33788059169](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/actions/runs/33788059169) |
-| Secrets GitHub Actions | Aucun requis ; validation optionnelle skip si absent |
+| CI `main` | **SUCCESS** — [run #33820423238](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/actions/runs/33820423238) |
+| Secrets GitHub Actions | Aucun requis ; validation optionnelle skip si absent ; rejet KEY=VALUE sur `CURSOR_API_KEY` |
 | App GitHub Cursor | Installée sur `aerys-eval-sandbox` (accès repo confirmé) |
 | Accès API secrets (`gh secret list`) | 403 attendu — token Cursor sans scope `secrets` (normal pour Milan) |
 | Erreur E005 | Prévenue par `validate-secrets.js`, `verify-milan-setup.js` et tests de régression |
