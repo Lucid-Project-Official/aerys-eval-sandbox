@@ -66,15 +66,16 @@ permissions:
 
 Cela suffit pour checkout, tests et badge CI. Milan n'a pas besoin de `secrets: write` sur ce dépôt pour la chaîne eval standard.
 
-### Vérification Milan (2026-09-03)
+### Vérification Milan (2026-09-04)
 
 | Contrôle | Résultat |
 |----------|----------|
-| CI `main` | **SUCCESS** — [run #33742635570](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/actions/runs/33742635570) |
+| CI `main` | **SUCCESS** — [run #33788059169](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/actions/runs/33788059169) |
 | Secrets GitHub Actions | Aucun requis ; validation optionnelle skip si absent |
 | App GitHub Cursor | Installée sur `aerys-eval-sandbox` (accès repo confirmé) |
 | Accès API secrets (`gh secret list`) | 403 attendu — token Cursor sans scope `secrets` (normal pour Milan) |
-| Erreur E005 | Évitée par format JSON objet / jeton brut (voir ci-dessus) |
+| Erreur E005 | Prévenue par `validate-secrets.js`, `verify-milan-setup.js` et tests de régression |
+| Config VPS Milan | Voir `.env.example` pour les formats attendus |
 
 Commandes locales :
 
@@ -83,7 +84,7 @@ npm run validate-secrets   # formats secrets GitHub Actions optionnels
 npm run verify-milan       # checklist connecteurs Milan + reachability GitHub
 ```
 
-Configuration Aerys VPS attendue pour Milan :
+Configuration Aerys VPS attendue pour Milan (modèle complet dans `.env.example`) :
 
 ```bash
 CURSOR_REPO_MAP={"eval-autonomie":"https://github.com/Lucid-Project-Official/aerys-eval-sandbox"}
