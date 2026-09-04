@@ -28,5 +28,7 @@ jobs:
         run: node scripts/validate-secrets.js
       - name: Verify Milan setup prerequisites
         run: node scripts/verify-milan-setup.js
+      - name: Verify CI workflow structure (deployment gate)
+        run: node scripts/verify-ci-workflow.js
       - run: npm test
       - run: npm run lint
