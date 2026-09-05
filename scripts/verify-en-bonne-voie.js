@@ -20,6 +20,7 @@ const EXPECTED_TEST_FILES = [
   'validate-secrets.test.js',
   'verify-milan-setup.test.js',
   'verify-ci-workflow.test.js',
+  'audit-milan-ci.test.js',
   'verify-en-bonne-voie.test.js',
 ];
 
