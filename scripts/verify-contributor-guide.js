@@ -85,6 +85,11 @@ function verifyContributingFile() {
   }
   ok(`CONTRIBUTING.md structure: ${points} main points.`);
 
+  if (!content.includes(EXPECTED_PUBLISH_DATE)) {
+    fail(`CONTRIBUTING.md must mention publish_date ${EXPECTED_PUBLISH_DATE}.`);
+  }
+  ok(`CONTRIBUTING.md mentions publish_date ${EXPECTED_PUBLISH_DATE}.`);
+
   return content;
 }
 
@@ -138,6 +143,8 @@ function emitMetrics(state, pointCount) {
     guide_url: state.guide_url || `https://github.com/${REPO}/blob/main/CONTRIBUTING.md`,
   };
   console.log('\nMETRICS:', JSON.stringify(metrics));
+  console.log('\n--- ProjectState ---');
+  console.log(JSON.stringify(metrics, null, 2));
 }
 
 async function main() {

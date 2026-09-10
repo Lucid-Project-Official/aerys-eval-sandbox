@@ -22,6 +22,16 @@ function runVerify() {
   assert.match(result.stdout, /guide_published = true/);
   assert.match(result.stdout, /publish_date = 2026-09-10/);
   assert.match(result.stdout, /METRICS:/);
+  assert.match(result.stdout, /--- ProjectState ---/);
+
+  const jsonMatch = result.stdout.match(
+    /--- ProjectState ---\n([\s\S]*?)\n\nContributor guide — verification OK/,
+  );
+  assert.ok(jsonMatch, 'Expected ProjectState JSON block in script output');
+  const metrics = JSON.parse(jsonMatch[1]);
+  assert.strictEqual(metrics.publish_date, '2026-09-10');
+  assert.strictEqual(metrics.guide_published, true);
+  assert.strictEqual(metrics.guide_structure.points, 3);
 }
 
 {
