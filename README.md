@@ -14,7 +14,7 @@ Valider la chaîne complète : objectif → mission → code → PR → CI → m
 |----------|-------------|--------|-----|
 | EN_BONNE_VOIE | Lint, tests unitaires, couverture scripts, CI verte | **Terminé** | [#11](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/11) |
 | A_RISQUE | Secrets GitHub, permissions Milan, prévention E005 | **Terminé** | [#10](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/10) |
-| GUIDE_CONTRIBUTEUR | Guide d'accueil 3 points, `publish_date` 2026-09-10 | **Terminé** | voir PR courante |
+| GUIDE_CONTRIBUTEUR | Guide d'accueil 3 points, `publish_date` 2026-09-10 | **Terminé** | [#28](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/28) |
 
 ## Guide contributeur
 
