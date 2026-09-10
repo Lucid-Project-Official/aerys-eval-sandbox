@@ -12,8 +12,23 @@ Valider la chaîne complète : objectif → mission → code → PR → CI → m
 
 | Objectif | Description | Statut | PR |
 |----------|-------------|--------|-----|
+| GUIDE_CONTRIBUTEUR | Guide d'accueil contributeur en 3 points, publié le 2026-09-10 | **Terminé** | — |
 | EN_BONNE_VOIE | Lint, tests unitaires, couverture scripts, CI verte | **Terminé** | [#11](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/11) |
 | A_RISQUE | Secrets GitHub, permissions Milan, prévention E005 | **Terminé** | [#10](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/10) |
+
+## Guides
+
+Le [guide d'accueil contributeur](docs/GUIDE_ACCUEIL_CONTRIBUTEUR.md) (*Published on 2026-09-10*) couvre trois points : présentation du projet, premiers pas, et ressources utiles.
+
+État du guide (`project_state.json` / `state/contributor-guide.json`) :
+
+| Champ | Valeur |
+|-------|--------|
+| `guide_published` | `true` |
+| `publish_date` | `2026-09-10` |
+| `guide_structure.points` | `3` |
+
+Vérification : `npm run verify-contributor-guide`
 
 ## Badge eval
 
