@@ -30,5 +30,7 @@ jobs:
         run: node scripts/verify-milan-setup.js
       - name: Verify CI workflow structure (deployment gate)
         run: node scripts/verify-ci-workflow.js
+      - name: Verify contributor welcome guide (publish_date 2026-09-10)
+        run: node scripts/verify-contributor-guide.js
       - run: npm test
       - run: npm run lint
