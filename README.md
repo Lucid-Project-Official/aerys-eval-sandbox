@@ -4,6 +4,8 @@
 
 Repository dédié aux tests d'évaluation d'autonomie Aerys.
 
+> **Nouveau contributeur ?** Consultez le [guide d'accueil en 3 points](CONTRIBUTING.md) (publié le 2026-09-10).
+
 ## Objectif
 
 Valider la chaîne complète : objectif → mission → code → PR → CI → merge.
