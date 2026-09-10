@@ -4,6 +4,10 @@
 
 Repository dédié aux tests d'évaluation d'autonomie Aerys.
 
+## Guide contributeur
+
+Consultez le [guide d'accueil contributeur](CONTRIBUTING.md) — **3 points** couvrant la prise en main, le parcours de contribution et les règles communautaires. Publié le **2026-09-10**.
+
 ## Objectif
 
 Valider la chaîne complète : objectif → mission → code → PR → CI → merge.
@@ -14,6 +18,7 @@ Valider la chaîne complète : objectif → mission → code → PR → CI → m
 |----------|-------------|--------|-----|
 | EN_BONNE_VOIE | Lint, tests unitaires, couverture scripts, CI verte | **Terminé** | [#11](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/11) |
 | A_RISQUE | Secrets GitHub, permissions Milan, prévention E005 | **Terminé** | [#10](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/10) |
+| GUIDE_CONTRIBUTEUR | Guide d'accueil 3 points, état publié | **Terminé** | [CONTRIBUTING.md](CONTRIBUTING.md) |
 
 ## Badge eval
 
@@ -113,6 +118,7 @@ npm run verify-ci             # validation structure workflow (gate déploiement
 npm run validate-secrets      # formats secrets GitHub Actions optionnels
 npm run verify-milan          # checklist connecteurs Milan + reachability GitHub
 npm run audit                 # audit complet Milan + secrets + CI main (A_RISQUE)
+npm run verify-contributor-guide  # guide contributeur 3 points + project-state.json
 ```
 
 Configuration Aerys VPS attendue pour Milan (modèle complet dans `.env.example`) :
