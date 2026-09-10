@@ -12,6 +12,7 @@ Valider la chaîne complète : objectif → mission → code → PR → CI → m
 
 | Objectif | Description | Statut | PR |
 |----------|-------------|--------|-----|
+| GUIDE_CONTRIBUTEUR | Guide d'accueil contributeur en 3 points | **Terminé** | — |
 | EN_BONNE_VOIE | Lint, tests unitaires, couverture scripts, CI verte | **Terminé** | [#11](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/11) |
 | A_RISQUE | Secrets GitHub, permissions Milan, prévention E005 | **Terminé** | [#10](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/10) |
 
@@ -103,6 +104,16 @@ Cela suffit pour checkout, tests et badge CI. Milan n'a pas besoin de `secrets: 
 | Secrets GitHub Actions | Aucun requis ; validation optionnelle skip si absent ; rejet KEY=VALUE sur `CURSOR_API_KEY` |
 | Erreur E005 | Prévenue par `validate-secrets.js`, `verify-milan-setup.js` et tests de régression |
 
+### Guide d'accueil contributeur (2026-09-10)
+
+| Contrôle | Résultat |
+|----------|----------|
+| Fichier publié | `CONTRIBUTING.md` — 3 sections (intégration, standards, workflow) |
+| `guide_structure.points` | **3** |
+| `guide_published` | **true** |
+| `publish_date` | **2026-09-10** |
+| Gate qualité | `npm run verify-contributor-guide` |
+
 Commandes locales :
 
 ```bash
@@ -113,6 +124,7 @@ npm run verify-ci             # validation structure workflow (gate déploiement
 npm run validate-secrets      # formats secrets GitHub Actions optionnels
 npm run verify-milan          # checklist connecteurs Milan + reachability GitHub
 npm run audit                 # audit complet Milan + secrets + CI main (A_RISQUE)
+npm run verify-contributor-guide  # gate guide d'accueil contributeur (GUIDE_CONTRIBUTEUR)
 ```
 
 Configuration Aerys VPS attendue pour Milan (modèle complet dans `.env.example`) :
