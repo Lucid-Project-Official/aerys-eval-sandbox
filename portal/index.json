@@ -1,0 +1,16 @@
+{
+  "published_at": "2026-09-10",
+  "guides": [
+    {
+      "slug": "guide-contributeur",
+      "title": "Guide d'accueil contributeur",
+      "path": "guide-contributeur.md",
+      "meta_path": "guide-contributeur.meta.json",
+      "publish_date": "2026-09-10",
+      "guide_published": true,
+      "guide_structure": {
+        "points": 3
+      }
+    }
+  ]
+}

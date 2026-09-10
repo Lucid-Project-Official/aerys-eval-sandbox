@@ -12,8 +12,26 @@ Valider la chaîne complète : objectif → mission → code → PR → CI → m
 
 | Objectif | Description | Statut | PR |
 |----------|-------------|--------|-----|
+| GUIDE_CONTRIBUTEUR | Guide d'accueil en 3 points, `publish_date` 2026-09-10, portail public | **Terminé** | — |
 | EN_BONNE_VOIE | Lint, tests unitaires, couverture scripts, CI verte | **Terminé** | [#11](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/11) |
 | A_RISQUE | Secrets GitHub, permissions Milan, prévention E005 | **Terminé** | [#10](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/10) |
+
+## Portail public — guide contributeur
+
+Le guide d'accueil contributeur est publié dans [`portal/`](portal/) :
+
+| Métrique | Valeur |
+|----------|--------|
+| `publish_date` | **2026-09-10** |
+| `guide_published` | **true** |
+| `guide_structure.points` | **3** |
+
+Contenu en trois points : introduction, étapes d'onboarding, normes communautaires.
+
+```bash
+npm run publish-contributor-guide   # publie et émet les métriques AERYS_METRICS
+npm run verify-contributor-guide    # gate de vérification (publish_date + structure)
+```
 
 ## Badge eval
 
@@ -109,6 +127,8 @@ Commandes locales :
 npm test                      # tests unitaires complets (CI)
 npm run lint                  # linting
 npm run verify-en-bonne-voie  # gate qualité EN_BONNE_VOIE (lint + tests + couverture + CI)
+npm run verify-contributor-guide  # gate guide contributeur (publish_date + portail)
+npm run publish-contributor-guide # publication portail + métriques mesurables
 npm run verify-ci             # validation structure workflow (gate déploiement)
 npm run validate-secrets      # formats secrets GitHub Actions optionnels
 npm run verify-milan          # checklist connecteurs Milan + reachability GitHub
