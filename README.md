@@ -14,6 +14,7 @@ Valider la chaîne complète : objectif → mission → code → PR → CI → m
 |----------|-------------|--------|-----|
 | EN_BONNE_VOIE | Lint, tests unitaires, couverture scripts, CI verte | **Terminé** | [#11](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/11) |
 | A_RISQUE | Secrets GitHub, permissions Milan, prévention E005 | **Terminé** | [#10](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/10) |
+| GUIDE_CONTRIBUTEUR | Guide d'accueil contributeur en 3 points (`CONTRIBUTING.md`) | **Terminé** | [#19](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/19) |
 
 ## Badge eval
 
@@ -80,8 +81,8 @@ Cela suffit pour checkout, tests et badge CI. Milan n'a pas besoin de `secrets: 
 | CI `main` | **SUCCESS** — [run #33835603147](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/actions/runs/33835603147) |
 | Taux de réussite `main` | **100 %** sur les 20 derniers runs (1 échec historique initial avant ajout des tests) |
 | Linting | `npm run lint` — OK |
-| Tests unitaires | `npm test` — 6 suites (index, validate-secrets, verify-milan, verify-ci-workflow, audit-milan-ci, verify-en-bonne-voie) |
-| Couverture scripts | 4/4 scripts couverts par des tests de régression |
+| Tests unitaires | `npm test` — 7 suites (index, validate-secrets, verify-milan, verify-ci-workflow, audit-milan-ci, verify-contributing-guide, verify-en-bonne-voie) |
+| Couverture scripts | 5/5 scripts couverts par des tests de régression |
 | Gate déploiement | `verify-ci-workflow.js` — structure workflow validée (pas de déploiement prod sur ce sandbox) |
 | Audit complet | `npm run audit` — validate-secrets + verify-milan + verify-ci + statut CI main |
 | Secrets GitHub Actions | **Aucun configuré** — validation skip (comportement attendu) ; rejet KEY=VALUE sur `CURSOR_API_KEY` si défini |
@@ -96,8 +97,8 @@ Cela suffit pour checkout, tests et badge CI. Milan n'a pas besoin de `secrets: 
 | CI `main` | **SUCCESS** — [run #33835603147](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/actions/runs/33835603147) |
 | Taux de réussite `main` | **100 %** sur les runs récents (1 échec historique initial avant ajout des tests) |
 | Linting | `npm run lint` — OK |
-| Tests unitaires | `npm test` — 6 suites (index, validate-secrets, verify-milan, verify-ci-workflow, audit-milan-ci, verify-en-bonne-voie) |
-| Couverture scripts | 4/4 scripts couverts par des tests de régression |
+| Tests unitaires | `npm test` — 7 suites (index, validate-secrets, verify-milan, verify-ci-workflow, audit-milan-ci, verify-contributing-guide, verify-en-bonne-voie) |
+| Couverture scripts | 5/5 scripts couverts par des tests de régression |
 | Gate qualité | `verify-en-bonne-voie.js` — lint + tests + couverture + statut CI main |
 | Gate déploiement | `verify-ci-workflow.js` — structure workflow validée (pas de déploiement prod sur ce sandbox) |
 | Secrets GitHub Actions | Aucun requis ; validation optionnelle skip si absent ; rejet KEY=VALUE sur `CURSOR_API_KEY` |
@@ -113,6 +114,7 @@ npm run verify-ci             # validation structure workflow (gate déploiement
 npm run validate-secrets      # formats secrets GitHub Actions optionnels
 npm run verify-milan          # checklist connecteurs Milan + reachability GitHub
 npm run audit                 # audit complet Milan + secrets + CI main (A_RISQUE)
+npm run verify-contributing-guide  # validation guide contributeur (3 sections)
 ```
 
 Configuration Aerys VPS attendue pour Milan (modèle complet dans `.env.example`) :
