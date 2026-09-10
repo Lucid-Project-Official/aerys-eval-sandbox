@@ -14,6 +14,27 @@ Valider la chaîne complète : objectif → mission → code → PR → CI → m
 |----------|-------------|--------|-----|
 | EN_BONNE_VOIE | Lint, tests unitaires, couverture scripts, CI verte | **Terminé** | [#11](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/11) |
 | A_RISQUE | Secrets GitHub, permissions Milan, prévention E005 | **Terminé** | [#10](https://github.com/Lucid-Project-Official/aerys-eval-sandbox/pull/10) |
+| GUIDE_CONTRIBUTEUR | Guide d'accueil contributeur en 3 points (publié 2026-09-10) | **Terminé** | — |
+
+## Guide d'accueil contributeur
+
+Le [guide d'accueil contributeur](docs/GUIDE-ACCUEIL-CONTRIBUTEUR.md) est publié en **3 points** (prise en main, conventions, communauté), daté du **2026-09-10**.
+
+Vérification locale :
+
+```bash
+npm run verify-contributor-guide
+```
+
+État mesurable (`project-state.json`) :
+
+```json
+{
+  "publish_date": "2026-09-10",
+  "guide_published": true,
+  "guide_structure": { "points": 3 }
+}
+```
 
 ## Badge eval
 
@@ -113,6 +134,7 @@ npm run verify-ci             # validation structure workflow (gate déploiement
 npm run validate-secrets      # formats secrets GitHub Actions optionnels
 npm run verify-milan          # checklist connecteurs Milan + reachability GitHub
 npm run audit                 # audit complet Milan + secrets + CI main (A_RISQUE)
+npm run verify-contributor-guide  # gate guide contributeur 3 points (GUIDE_CONTRIBUTEUR)
 ```
 
 Configuration Aerys VPS attendue pour Milan (modèle complet dans `.env.example`) :
