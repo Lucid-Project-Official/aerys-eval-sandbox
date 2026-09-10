@@ -1,0 +1,15 @@
+{
+  "publish_date": "2026-09-10",
+  "guide_published": true,
+  "guide_structure": {
+    "points": 3
+  },
+  "contributor_welcome_guide": {
+    "path": "CONTRIBUTING.md",
+    "headings": [
+      "Introduction",
+      "Étapes d'onboarding",
+      "Normes communautaires"
+    ]
+  }
+}
