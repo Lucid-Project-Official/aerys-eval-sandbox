@@ -16,6 +16,7 @@ const REQUIRED_STEP_PATTERNS = [
   /validate-secrets\.js/,
   /verify-milan-setup\.js/,
   /verify-ci-workflow\.js/,
+  /pytest tests/,
   /- run: npm test/,
   /- run: npm run lint/,
 ];

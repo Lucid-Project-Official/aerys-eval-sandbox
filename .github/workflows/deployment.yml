@@ -1,0 +1,32 @@
+name: Deployment
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'develop_platform.py'
+      - 'aerys_platform/**'
+      - 'project-state.json'
+      - '.github/workflows/deployment.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  develop-platform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+      - name: Develop platform (sets platform.developed = true)
+        run: python develop_platform.py
+      - name: Validate deployment gate (platform ready for next stage)
+        run: python scripts/validate_platform_deployment.py
+      - name: Show platform metrics
+        run: python -c "import json; print(json.load(open('project-state.json'))['platform'])"
