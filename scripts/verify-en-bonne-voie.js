@@ -23,6 +23,7 @@ const EXPECTED_TEST_FILES = [
   'audit-milan-ci.test.js',
   'verify-en-bonne-voie.test.js',
   'verify-contributor-guide.test.js',
+  'verify-platform-developed.test.js',
 ];
 
 function fail(message) {

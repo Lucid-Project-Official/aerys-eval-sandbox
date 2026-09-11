@@ -19,6 +19,11 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pytest
+        run: pip install pytest
       - name: Validate optional Aerys/Cursor secrets format
         env:
           # Optional — absent secrets are skipped. See README § Configuration secrets.
@@ -31,4 +36,6 @@ jobs:
       - name: Verify CI workflow structure (deployment gate)
         run: node scripts/verify-ci-workflow.js
       - run: npm test
+      - run: npm run test:pytest
+      - run: npm run verify-platform-developed
       - run: npm run lint

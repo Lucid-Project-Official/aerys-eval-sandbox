@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Sandbox for Aerys autonomy evaluation",
   "scripts": {
-    "test:unit": "node test/index.test.js && node test/validate-secrets.test.js && node test/verify-milan-setup.test.js && node test/verify-ci-workflow.test.js && node test/audit-milan-ci.test.js && node test/verify-contributor-guide.test.js",
+    "test:unit": "node test/index.test.js && node test/validate-secrets.test.js && node test/verify-milan-setup.test.js && node test/verify-ci-workflow.test.js && node test/audit-milan-ci.test.js && node test/verify-contributor-guide.test.js && node test/verify-platform-developed.test.js",
+    "test:pytest": "python3 -m pytest tests/ -v",
     "test": "npm run test:unit && node test/verify-en-bonne-voie.test.js",
     "lint": "node -e \"console.log('lint ok')\"",
     "validate-secrets": "node scripts/validate-secrets.js",
@@ -11,6 +12,7 @@
     "verify-ci": "node scripts/verify-ci-workflow.js",
     "verify-en-bonne-voie": "node scripts/verify-en-bonne-voie.js",
     "audit": "node scripts/audit-milan-ci.js",
-    "verify-contributor-guide": "node scripts/verify-contributor-guide.js"
+    "verify-contributor-guide": "node scripts/verify-contributor-guide.js",
+    "verify-platform-developed": "node scripts/verify-platform-developed.js"
   }
 }
