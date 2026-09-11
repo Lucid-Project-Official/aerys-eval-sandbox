@@ -4,5 +4,9 @@
   "guide_structure": {
     "points": 3
   },
-  "guide_url": "https://github.com/Lucid-Project-Official/aerys-eval-sandbox/blob/main/CONTRIBUTING.md"
+  "guide_url": "https://github.com/Lucid-Project-Official/aerys-eval-sandbox/blob/main/CONTRIBUTING.md",
+  "platform": {
+    "developed": true,
+    "status": "ready"
+  }
 }
